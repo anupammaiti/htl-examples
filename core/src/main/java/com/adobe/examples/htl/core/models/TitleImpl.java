@@ -1,10 +1,11 @@
 package com.adobe.examples.htl.core.models;
 
-import com.adobe.cq.wcm.core.components.models.Constants;
-import com.adobe.cq.wcm.core.components.models.Title;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
+
+import com.adobe.cq.export.json.ExporterConstants;
+import com.adobe.cq.wcm.core.components.models.Title;
 
 /**
  * This is an implementation of the Title-model.
@@ -14,7 +15,7 @@ import org.apache.sling.models.annotations.Model;
  * (/apps/aemhtlexamples/components/content/title).
  */
 @Model(adaptables = SlingHttpServletRequest.class, adapters = Title.class, resourceType = TitleImpl.RESOURCE_TYPE)
-@Exporter(name = Constants.EXPORTER_NAME, extensions = Constants.EXPORTER_EXTENSION)
+@Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class TitleImpl implements Title {
 
     protected static final String RESOURCE_TYPE = "aemhtlexamples/components/content/title";

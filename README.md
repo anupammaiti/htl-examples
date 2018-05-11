@@ -2,11 +2,11 @@
 AEM HTL examples
 
 ### AEM compatibility
-The package is only compatible with AEM6.3, this because new features are used that are only available in AEM6.3
+The package is only compatible with AEM6.3 SP1 and later, this because new features are used that are only available in AEM6.3.1.0
 - Exporter (sling-models)
 - getInheritedPageProperties() in WCMUsePojo
 - getLanguage() in Page-api
-
+- getModelFromWrappedRequest() in ModelFactory
 
 ## Included examples
 
@@ -65,3 +65,10 @@ Shows how to display a healthcheck card in the operations dashboard. To extend t
 
 ### [Custom Polling](/core/src/main/java/com/adobe/examples/htl/core/polling/CustomPolling.java)
 Example of a custom poller that gets executed based on the information in the cq:PollConfig node. 
+
+### [Datalayer mover](/core/src/main/java/com/adobe/examples/htl/core/datalayer/DatalayerFilter.java)
+Common problem when defining a datalayer is that the JS-fragments are in the body,
+while some of those need to be in the head. This filter is moving JS-fragments from the body into the head.
+
+### [Flexible adapters](/ui.apps/src/main/content/jcr_root/apps/aemhtlexamples/components/aem6.3/flexibleadaptable/example.html)
+Shows how to have a flexible way of using adapters, instead of always the same resource. Available since 6.3.1.1

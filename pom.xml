@@ -217,7 +217,7 @@
 				<plugin>
 					<groupId>com.day.jcr.vault</groupId>
 					<artifactId>content-package-maven-plugin</artifactId>
-					<version>0.0.24</version>
+					<version>0.5.24</version>
 					<configuration>
 						<targetURL>http://${aem.host}:${aem.port}/crx/packmgr/service.jsp</targetURL>
 						<failOnError>true</failOnError>
@@ -228,9 +228,9 @@
 				<plugin>
 					<groupId>org.apache.felix</groupId>
 					<artifactId>maven-bundle-plugin</artifactId>
-					<version>3.2.0</version>
+					<version>3.3.0</version>
 					<inherited>true</inherited>
-					<!-- use 3.2.0 to use the new annotations -->
+					<!-- use 3.2.0 or higher to use the new annotations -->
 				</plugin>
 				<!-- Maven Enforcer Plugin -->
 				<plugin>
@@ -415,11 +415,13 @@
 				<scope>provided</scope>
 			</dependency>
 
-			<!-- dependency for AEM6.3 -->
+			<!-- dependency for AEM6.4
+			Please check for other dependencies: https://repo.adobe.com/nexus/content/groups/public/com/adobe/aem/uber-jar/
+			 -->
 			<dependency>
 				<groupId>com.adobe.aem</groupId>
 				<artifactId>uber-jar</artifactId>
-				<version>6.3.1</version>
+				<version>6.4.0</version>
 				<classifier>apis</classifier>
 				<scope>provided</scope>
 			</dependency>
@@ -481,9 +483,16 @@
 			<dependency>
 				<groupId>com.adobe.cq</groupId>
 				<artifactId>core.wcm.components.core</artifactId>
-				<version>1.0.4</version>
+				<version>1.1.0</version>
 				<scope>provided</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>com.adobe.acs</groupId>
+				<artifactId>acs-aem-commons-bundle</artifactId>
+				<version>3.8.4</version>
+			</dependency>
+
 			<!-- Testing -->
 			<dependency>
 				<groupId>junit</groupId>
